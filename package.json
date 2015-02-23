@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "dependencies": {
+    "cssmin": "^0.4.2",
+    "gulp": "^3.8.11",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-include": "^1.1.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "todomvc-app-css": "^1.0.0",
+    "todomvc-common": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-livereload": "^3.7.0",
+    "gulp-ng-annotate": "^0.5.2"
+  }
+}

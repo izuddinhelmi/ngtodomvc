@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="todos">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<!-- CSS overrides - remove if you don't need it -->
+		<link rel="stylesheet" href="dist/css/app.min.css">
+	</head>
+	<body>
+		<section id="todoapp">
+			<header id="header" ng-controller="createController">
+				<h1>todos</h1>
+				<input ng-model="newTodo" ng-keyup="createTodo($event)" id="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<!-- This section should be hidden by default and shown when there are todos -->
+			<section id="main">
+				<input id="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<div ng-view></div>
+			</section>
+			<!-- This footer should hidden by default and shown when there are todos -->
+			<footer id="footer" ng-controller="footerController">
+				<!-- This should be `0 items left` by default -->
+				<span id="todo-count"><strong>{{incompleteLength()}}</strong> item left</span>
+				<!-- Remove this if you don't implement routing -->
+				<ul id="filters">
+					<li>
+						<a ng-class="{selected: (location.$$path == '/')}" href="#/">All</a>
+					</li>
+					<li>
+						<a ng-class="{selected: (location.$$path == '/active')}" href="#/active">Active</a>
+					</li>
+					<li>
+						<a ng-class="{selected: (location.$$path == '/completed')}" href="#/completed">Completed</a>
+					</li>
+				</ul>
+				<!-- Hidden if no completed items are left ↓ -->
+				<button id="clear-completed" ng-click="clearCompleted()"></button>
+			</footer>
+		</section>
+		<footer id="info">
+			<p>Double-click to edit a todo</p>
+			<!-- Remove the below line ↓ -->
+			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+			<!-- Change this out with your name and url ↓ -->
+			<p>Created by <a href="http://todomvc.com">you</a></p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+		<!-- Scripts here. Don't remove ↓ -->
+		<script src="dist/js/app.js"></script>
+		<script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
+	</body>
+</html>
